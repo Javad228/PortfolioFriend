@@ -1,0 +1,76 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "projectName": "Emo Project",
+      "projectDescription": "Character Animation & Movement System",
+      "projectColor": "secondary",
+      "items": [
+        {
+          "title": "CHARACTER WALK CYCLE",
+          "category": "ANIMATION",
+          "description": "Complete 8-directional walking animation set for character movement in games.",
+          "imagePath": "emo_project/test_walk_south.gif",
+          "tags": ["ANIMATION", "CHARACTER", "WALK CYCLE"]
+        },
+        {
+          "title": "DIRECTIONAL ANIMATIONS",
+          "category": "ANIMATION", 
+          "description": "North-East walking animation showcasing smooth diagonal movement.",
+          "imagePath": "emo_project/test_walk_north-east.gif",
+          "tags": ["ANIMATION", "MOVEMENT", "DIAGONAL"]
+        },
+        {
+          "title": "8-DIRECTION ROTATION",
+          "category": "ANIMATION",
+          "description": "Character rotation showcase demonstrating all 8 directional sprites.",
+          "imagePath": "emo_project/test_rotations_8dir.gif", 
+          "tags": ["ROTATION", "SPRITE SHEET", "8-DIR"]
+        },
+        {
+          "title": "WEST MOVEMENT",
+          "category": "ANIMATION",
+          "description": "Smooth westward walking animation with detailed frame transitions.",
+          "imagePath": "emo_project/test_walk_west.gif",
+          "tags": ["ANIMATION", "WEST", "MOVEMENT"]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "projectName": "Workout Project", 
+      "projectDescription": "Fitness Game Characters & Assets",
+      "projectColor": "accent",
+      "items": [
+        {
+          "title": "WORKOUT CHARACTER DESIGN",
+          "category": "CHARACTER",
+          "description": "Detailed character sprite design for fitness/workout themed game.",
+          "imagePath": "workout_project/image.png",
+          "tags": ["CHARACTER", "FITNESS", "SPRITE"]
+        },
+        {
+          "title": "FITNESS SPRITE VARIANTS",
+          "category": "CHARACTER",
+          "description": "Multiple character variations for workout/fitness game characters.",
+          "imagePath": "workout_project/image1.png",
+          "tags": ["VARIANTS", "FITNESS", "DESIGN"]
+        },
+        {
+          "title": "EXERCISE EQUIPMENT SPRITES", 
+          "category": "OBJECTS",
+          "description": "Detailed pixel art of gym equipment and fitness accessories.",
+          "imagePath": "workout_project/image2.png",
+          "tags": ["EQUIPMENT", "GYM", "OBJECTS"]
+        },
+        {
+          "title": "WORKOUT UI ELEMENTS",
+          "category": "UI",
+          "description": "User interface elements designed for fitness applications and games.",
+          "imagePath": "workout_project/image3.png",
+          "tags": ["UI", "FITNESS", "INTERFACE"]
+        }
+      ]
+    }
+  ]
+}

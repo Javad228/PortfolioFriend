@@ -1,0 +1,28 @@
+{
+  "projectName": "Workout Project",
+  "projectDescription": "Fitness Game Characters & Assets", 
+  "projectColor": "accent",
+  "items": [
+    {
+      "title": "WORKOUT CHARACTER DESIGN",
+      "category": "CHARACTER",
+      "description": "Detailed character sprite design for fitness/workout themed game.",
+      "image": "/portfolio/workout_project/image.png",
+      "tags": ["CHARACTER", "FITNESS", "SPRITE"]
+    },
+    {
+      "title": "FITNESS SPRITE VARIANTS",
+      "category": "CHARACTER",
+      "description": "Multiple character variations for workout/fitness game characters.",
+      "image": "/portfolio/workout_project/image1.png", 
+      "tags": ["VARIANTS", "FITNESS", "DESIGN"]
+    },
+    {
+      "title": "EXERCISE EQUIPMENT SPRITES",
+      "category": "OBJECTS",
+      "description": "Detailed pixel art of gym equipment and fitness accessories.",
+      "image": "/portfolio/workout_project/image2.png",
+      "tags": ["EQUIPMENT", "GYM", "OBJECTS"]
+    }
+  ]
+}

@@ -1,0 +1,181 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root {
+  --pixel-bg: #0f0f23;
+  --pixel-primary: #00ff41;
+  --pixel-secondary: #ff6b35;
+  --pixel-accent: #7209b7;
+  --pixel-text: #ffffff;
+  --pixel-border: #333333;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Press Start 2P', monospace;
+  background-color: var(--pixel-bg);
+  color: var(--pixel-text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Pixel-perfect scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--pixel-bg);
+  border: 2px solid var(--pixel-border);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--pixel-primary);
+  border: 1px solid var(--pixel-border);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--pixel-secondary);
+}
+
+/* Pixel art cursor */
+.pixel-cursor {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><rect x="0" y="0" width="2" height="2" fill="%23ffffff"/><rect x="2" y="2" width="2" height="2" fill="%23ffffff"/><rect x="4" y="4" width="2" height="2" fill="%23ffffff"/><rect x="6" y="6" width="2" height="2" fill="%23ffffff"/><rect x="8" y="8" width="2" height="2" fill="%23ffffff"/><rect x="0" y="2" width="2" height="2" fill="%23ffffff"/><rect x="2" y="4" width="2" height="2" fill="%23ffffff"/></svg>') 0 0, auto;
+}
+
+/* Pixel button styles */
+.pixel-btn {
+  @apply bg-pixel-primary text-pixel-bg px-4 py-2 border-2 border-pixel-primary font-pixel text-sm;
+  transition: all 0.1s ease;
+  image-rendering: pixelated;
+}
+
+.pixel-btn:hover {
+  @apply bg-pixel-bg text-pixel-primary shadow-lg;
+  box-shadow: 0 0 10px var(--pixel-primary);
+}
+
+.pixel-btn:active {
+  transform: translateY(2px);
+}
+
+/* Pixel border effect */
+.pixel-border {
+  position: relative;
+}
+
+.pixel-border::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, var(--pixel-primary), var(--pixel-secondary));
+  z-index: -1;
+}
+
+/* Glitch effect for text */
+.glitch {
+  position: relative;
+  color: var(--pixel-text);
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.glitch::before {
+  animation: glitch-1 0.5s infinite;
+  color: var(--pixel-primary);
+  z-index: -1;
+}
+
+.glitch::after {
+  animation: glitch-2 0.5s infinite;
+  color: var(--pixel-secondary);
+  z-index: -2;
+}
+
+@keyframes glitch-1 {
+  0%, 14%, 15%, 49%, 50%, 99%, 100% {
+    transform: translate(0);
+  }
+  15%, 49% {
+    transform: translate(-2px, 0);
+  }
+}
+
+@keyframes glitch-2 {
+  0%, 20%, 21%, 62%, 63%, 99%, 100% {
+    transform: translate(0);
+  }
+  21%, 62% {
+    transform: translate(2px, 0);
+  }
+}
+
+/* Pixel art image rendering */
+.pixel-art {
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -webkit-crisp-edges;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+/* Retro CRT effect */
+.crt-effect {
+  position: relative;
+}
+
+.crt-effect::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(transparent 50%, rgba(0, 255, 0, 0.03) 50%);
+  background-size: 100% 4px;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+/* Scanlines animation */
+@keyframes scanlines {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 100%;
+  }
+}
+
+.scanlines {
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 255, 65, 0.1) 2px,
+    rgba(0, 255, 65, 0.1) 4px
+  );
+  animation: scanlines 0.1s linear infinite;
+}

@@ -1,0 +1,103 @@
+backend:
+  name: git-gateway
+  branch: main # Change to 'master' if your default branch is master
+
+# Enable local development
+local_backend: true
+
+# Media files
+media_folder: "public/portfolio"
+public_folder: "/portfolio"
+
+# Site configuration
+site_url: https://your-portfolio-site.netlify.app # Update this when deployed
+display_url: https://your-portfolio-site.netlify.app
+
+# Collections
+collections:
+  # Portfolio Projects
+  - name: "projects"
+    label: "🎮 Portfolio Projects"
+    label_singular: "Project"
+    folder: "content/projects"
+    create: true
+    slug: "{{slug}}"
+    extension: "json"
+    format: "json"
+    fields:
+      - { label: "Project Name", name: "projectName", widget: "string", hint: "e.g., Space Adventure" }
+      - { label: "Description", name: "projectDescription", widget: "text", hint: "Brief description of the project" }
+      - label: "Color Theme"
+        name: "projectColor"
+        widget: "select"
+        options:
+          - { label: "Green", value: "primary" }
+          - { label: "Orange", value: "secondary" }
+          - { label: "Purple", value: "accent" }
+        default: "primary"
+      - label: "Artwork Items"
+        name: "items"
+        widget: "list"
+        fields:
+          - { label: "Title", name: "title", widget: "string", hint: "e.g., DRAGON BOSS" }
+          - label: "Category"
+            name: "category"
+            widget: "select"
+            options: ["ANIMATION", "CHARACTER", "OBJECTS", "UI", "ENVIRONMENT"]
+          - { label: "Description", name: "description", widget: "text" }
+          - { label: "Image", name: "image", widget: "image", hint: "Upload your pixel art image" }
+          - label: "Tags"
+            name: "tags"
+            widget: "list"
+            default: ["PIXEL", "ART"]
+            hint: "Add tags to describe your artwork"
+
+  # Site Settings
+  - name: "settings"
+    label: "⚙️ Site Settings"
+    files:
+      - label: "Portfolio Configuration"
+        name: "portfolio-config"
+        file: "public/portfolio-config.json"
+        format: "json"
+        fields:
+          - label: "Projects"
+            name: "projects"
+            widget: "list"
+            fields:
+              - { label: "ID", name: "id", widget: "number" }
+              - { label: "Project Name", name: "projectName", widget: "string" }
+              - { label: "Project Description", name: "projectDescription", widget: "string" }
+              - label: "Project Color"
+                name: "projectColor"
+                widget: "select"
+                options: ["primary", "secondary", "accent"]
+              - label: "Items"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - label: "Category"
+                    name: "category"
+                    widget: "select"
+                    options: ["ANIMATION", "CHARACTER", "OBJECTS", "UI", "ENVIRONMENT"]
+                  - { label: "Description", name: "description", widget: "text" }
+                  - { label: "Image Path", name: "imagePath", widget: "string", hint: "e.g., project_name/image.png" }
+                  - { label: "Tags", name: "tags", widget: "list" }
+
+      - label: "About Me"
+        name: "about"
+        file: "content/about.md"
+        fields:
+          - { label: "Name", name: "name", widget: "string", default: "Pixel Artist" }
+          - { label: "Bio", name: "bio", widget: "markdown" }
+          - { label: "Profile Image", name: "profileImage", widget: "image" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Discord", name: "discord", widget: "string" }
+
+# Editor settings
+editor:
+  preview: true
+
+# Logo
+logo_url: /favicon.ico

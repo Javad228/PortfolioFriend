@@ -1,0 +1,28 @@
+{
+  "projectName": "Emo Project",
+  "projectDescription": "Character Animation & Movement System",
+  "projectColor": "secondary",
+  "items": [
+    {
+      "title": "CHARACTER WALK CYCLE",
+      "category": "ANIMATION",
+      "description": "Complete 8-directional walking animation set for character movement in games.",
+      "image": "/portfolio/emo_project/test_walk_south.gif",
+      "tags": ["ANIMATION", "CHARACTER", "WALK CYCLE"]
+    },
+    {
+      "title": "DIRECTIONAL ANIMATIONS", 
+      "category": "ANIMATION",
+      "description": "North-East walking animation showcasing smooth diagonal movement.",
+      "image": "/portfolio/emo_project/test_walk_north-east.gif",
+      "tags": ["ANIMATION", "MOVEMENT", "DIAGONAL"]
+    },
+    {
+      "title": "8-DIRECTION ROTATION",
+      "category": "ANIMATION", 
+      "description": "Character rotation showcase demonstrating all 8 directional sprites.",
+      "image": "/portfolio/emo_project/test_rotations_8dir.gif",
+      "tags": ["ROTATION", "SPRITE SHEET", "8-DIR"]
+    }
+  ]
+}

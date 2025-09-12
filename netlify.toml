@@ -1,0 +1,19 @@
+[build]
+  publish = ".next"
+  command = "npm run build"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+[[redirects]]
+  from = "/admin/*"
+  to = "/admin/index.html"
+  status = 200
+
+# Enable Netlify Identity for authentication
+[template.environment]
+  NETLIFY_SITE_ID = "your-site-id"
+
+# Git Gateway settings
+[[plugins]]
+  package = "netlify-plugin-git-lfs"

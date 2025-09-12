@@ -1,0 +1,64 @@
+/* Netlify CMS Preview Styling - Pixel Art Theme */
+
+body {
+  background: #0f0f23 !important;
+  color: #ffffff !important;
+  font-family: 'Courier New', monospace !important;
+}
+
+/* Preview container */
+.frame-content {
+  background: #0f0f23 !important;
+  color: #00ff41 !important;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: #00ff41 !important;
+  font-family: 'Courier New', monospace !important;
+  text-transform: uppercase;
+}
+
+/* Images */
+img {
+  image-rendering: pixelated !important;
+  image-rendering: -moz-crisp-edges !important;
+  image-rendering: crisp-edges !important;
+  border: 2px solid #00ff41;
+  max-width: 300px;
+  margin: 10px 0;
+}
+
+/* Text */
+p {
+  color: #ffffff !important;
+  line-height: 1.6;
+}
+
+/* Lists */
+ul, ol {
+  color: #ffffff !important;
+}
+
+li {
+  margin: 5px 0;
+}
+
+/* Borders and containers */
+.preview-container {
+  border: 2px solid #00ff41;
+  padding: 20px;
+  margin: 10px;
+  background: rgba(0, 255, 65, 0.1);
+}
+
+/* Tags */
+.tag {
+  background: rgba(255, 107, 53, 0.2);
+  color: #ff6b35;
+  padding: 4px 8px;
+  border: 1px solid #ff6b35;
+  margin: 2px;
+  display: inline-block;
+  font-size: 12px;
+}

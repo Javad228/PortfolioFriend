@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio Admin</title>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <style>
+    body {
+      background: #0f0f23;
+      color: #00ff41;
+      font-family: 'Courier New', monospace;
+    }
+    
+    .loading {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      font-size: 24px;
+    }
+    
+    .pixel-border {
+      border: 2px solid #00ff41;
+      background: #0f0f23;
+    }
+  </style>
+</head>
+<body>
+  <div class="loading">
+    🎮 Loading Pixel Art Portfolio Admin...
+  </div>
+  
+  <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+  
+  <script>
+    // Initialize Netlify Identity
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+    
+    // Custom styling for the CMS
+    CMS.registerPreviewStyle("/admin/preview.css");
+    
+    // Custom preview template for projects
+    CMS.registerPreviewTemplate("portfolio", ({ entry, widgetFor }) => {
+      const data = entry.getIn(['data']).toJS();
+      return `
+        <div style="background: #0f0f23; color: #00ff41; padding: 20px; font-family: monospace;">
+          <h1>🎮 ${data.title || 'Project Preview'}</h1>
+          <p><strong>Category:</strong> ${data.category || 'N/A'}</p>
+          <p><strong>Description:</strong> ${data.description || 'No description'}</p>
+          ${data.image ? `<img src="${data.image}" style="max-width: 200px; image-rendering: pixelated;" />` : ''}
+          <p><strong>Tags:</strong> ${(data.tags || []).join(', ')}</p>
+        </div>
+      `;
+    });
+  </script>
+</body>
+</html>
