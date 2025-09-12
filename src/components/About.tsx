@@ -76,9 +76,9 @@ export default function About() {
             </h3>
             <div className="space-y-4 text-pixel-text/80 text-lg leading-relaxed">
               <p>
-                Welcome to my pixel universe! I'm a passionate digital artist specializing in 
+                Welcome to my pixel universe! I&apos;m a passionate digital artist specializing in 
                 pixel art and retro-style game graphics. With over 5 years of experience, 
-                I've mastered the art of creating compelling visuals within the constraints 
+                I&apos;ve mastered the art of creating compelling visuals within the constraints 
                 of limited resolution and color palettes.
               </p>
               <p>
@@ -170,7 +170,7 @@ export default function About() {
                 </h4>
                 <div className="w-16 h-0.5 bg-pixel-secondary mx-auto mb-4"></div>
                 <p className="text-pixel-text/80 text-sm">
-                  "Every pixel tells a story"
+                  &ldquo;Every pixel tells a story&rdquo;
                 </p>
               </motion.div>
             </div>

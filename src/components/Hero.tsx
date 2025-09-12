@@ -7,10 +7,9 @@ export default function Hero() {
   const [currentText, setCurrentText] = useState('')
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isDeleting, setIsDeleting] = useState(false)
-  
-  const texts = ['PIXEL ARTIST', 'DIGITAL CREATOR', 'SPRITE MASTER', '8-BIT WIZARD']
 
   useEffect(() => {
+    const texts = ['PIXEL ARTIST', 'DIGITAL CREATOR', 'SPRITE MASTER', '8-BIT WIZARD']
     const timeout = setTimeout(() => {
       const current = texts[currentIndex]
       
@@ -31,7 +30,7 @@ export default function Hero() {
     }, isDeleting ? 50 : 150)
 
     return () => clearTimeout(timeout)
-  }, [currentText, isDeleting, currentIndex, texts])
+  }, [currentText, isDeleting, currentIndex])
 
   // Pixel character sprite (simplified ASCII art)
   const pixelCharacter = [

@@ -83,7 +83,7 @@ export default function Contact() {
           </h2>
           <div className="w-24 h-1 bg-pixel-secondary mx-auto mb-8"></div>
           <p className="text-xl text-pixel-text/80 max-w-2xl mx-auto">
-            Ready to bring your pixel art vision to life? Let's collaborate and create something amazing together!
+            Ready to bring your pixel art vision to life? Let&apos;s collaborate and create something amazing together!
           </p>
         </motion.div>
 
@@ -118,7 +118,7 @@ export default function Contact() {
             </div>
 
             <h3 className="text-2xl font-bold mb-8 text-pixel-text">
-              LET'S CREATE TOGETHER
+              LET&apos;S CREATE TOGETHER
             </h3>
 
             <div className="space-y-6">
@@ -192,7 +192,7 @@ export default function Contact() {
                 <h4 className="text-lg font-bold text-pixel-text mb-2">AVAILABILITY</h4>
                 <p className="text-pixel-text/80 text-sm leading-relaxed">
                   Currently accepting new projects! I typically respond within 24 hours. 
-                  Let's discuss your pixel art needs and bring your creative vision to life.
+                  Let&apos;s discuss your pixel art needs and bring your creative vision to life.
                 </p>
               </motion.div>
             </div>
@@ -268,7 +268,7 @@ export default function Contact() {
 
               <div className="mt-6 text-center">
                 <p className="text-pixel-text/60 text-sm">
-                  I'll get back to you as soon as possible!
+                  I&apos;ll get back to you as soon as possible!
                 </p>
               </div>
             </div>
@@ -287,7 +287,7 @@ export default function Contact() {
           </h3>
           <p className="text-pixel-text/80 max-w-2xl mx-auto mb-8">
             Whether you need character sprites, environmental assets, UI elements, or complete pixel art packages, 
-            I'm here to help bring your vision to life with professional quality and attention to detail.
+            I&apos;m here to help bring your vision to life with professional quality and attention to detail.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
