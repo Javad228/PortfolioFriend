@@ -1,5 +1,4 @@
-import { withPageAuthRequired } from '@auth0/nextjs-auth0';
-import { useUser } from '@auth0/nextjs-auth0/client';
+import { withPageAuthRequired, useUser } from '@auth0/nextjs-auth0';
 
 export default function Dashboard() {
   const { user, error, isLoading } = useUser();

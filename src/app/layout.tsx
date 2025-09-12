@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import { UserProvider } from '@auth0/nextjs-auth0/client'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -29,12 +28,10 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body className="pixel-cursor bg-pixel-bg text-pixel-text antialiased">
-        <UserProvider>
-          <div className="crt-effect min-h-screen">
-            <div className="scanlines fixed inset-0 pointer-events-none z-50 opacity-20"></div>
-            {children}
-          </div>
-        </UserProvider>
+        <div className="crt-effect min-h-screen">
+          <div className="scanlines fixed inset-0 pointer-events-none z-50 opacity-20"></div>
+          {children}
+        </div>
       </body>
     </html>
   )
