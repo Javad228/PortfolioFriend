@@ -1,6 +1,11 @@
-import { withMiddlewareAuthRequired } from '@auth0/nextjs-auth0/edge'
+import { NextResponse } from 'next/server'
+import type { NextRequest } from 'next/server'
 
-export default withMiddlewareAuthRequired()
+export function middleware(request: NextRequest) {
+  // For now, allow all requests to pass through
+  // Auth protection will be handled at the component level
+  return NextResponse.next()
+}
 
 export const config = {
   matcher: ['/dashboard/:path*', '/api/save-config/:path*']

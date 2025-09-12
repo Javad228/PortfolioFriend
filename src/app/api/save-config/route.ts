@@ -5,7 +5,7 @@ import { Octokit } from '@octokit/rest'
 export async function POST(request: NextRequest) {
   try {
     // Check authentication
-    const session = await getSession()
+    const session = await getSession(request)
     if (!session) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
