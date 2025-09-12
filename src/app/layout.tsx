@@ -29,10 +29,12 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body className="pixel-cursor bg-pixel-bg text-pixel-text antialiased">
-        <div className="crt-effect min-h-screen">
-          <div className="scanlines fixed inset-0 pointer-events-none z-50 opacity-20"></div>
-          {children}
-        </div>
+        <UserProvider>
+          <div className="crt-effect min-h-screen">
+            <div className="scanlines fixed inset-0 pointer-events-none z-50 opacity-20"></div>
+            {children}
+          </div>
+        </UserProvider>
       </body>
     </html>
   )
