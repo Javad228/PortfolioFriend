@@ -9,15 +9,3 @@
   from = "/admin/*"
   to = "/admin/index.html"
   status = 200
-
-[[redirects]]
-  from = "/dashboard"
-  to = "/dashboard"
-  status = 200
-  force = true
-  headers = {X-From = "Netlify"}
-
-[[redirects]]
-  from = "/api/*"
-  to = "/api/:splat"
-  status = 200
