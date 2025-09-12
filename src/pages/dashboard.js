@@ -1,4 +1,5 @@
 import { withPageAuthRequired } from '@auth0/nextjs-auth0';
+import Link from 'next/link';
 
 export default function Dashboard({ user }) {
 
@@ -21,9 +22,9 @@ export default function Dashboard({ user }) {
           </p>
           
           <div className="mt-6">
-            <a href="/api/auth/logout" className="pixel-btn bg-pixel-secondary border-pixel-secondary hover:bg-pixel-bg hover:text-pixel-secondary" rel="nofollow">
+            <Link href="/api/auth/logout" className="pixel-btn bg-pixel-secondary border-pixel-secondary hover:bg-pixel-bg hover:text-pixel-secondary">
               Logout
-            </a>
+            </Link>
           </div>
         </div>
       </div>
