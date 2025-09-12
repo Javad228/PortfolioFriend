@@ -1,10 +1,6 @@
-import { withPageAuthRequired, useUser } from '@auth0/nextjs-auth0';
+import { withPageAuthRequired } from '@auth0/nextjs-auth0';
 
-export default function Dashboard() {
-  const { user, error, isLoading } = useUser();
-
-  if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>{error.message}</div>;
+export default function Dashboard({ user }) {
 
   return (
     <div className="min-h-screen bg-pixel-bg text-pixel-text p-8">
@@ -25,10 +21,7 @@ export default function Dashboard() {
           </p>
           
           <div className="mt-6">
-            <a 
-              href="/api/auth/logout"
-              className="pixel-btn bg-pixel-secondary border-pixel-secondary hover:bg-pixel-bg hover:text-pixel-secondary"
-            >
+            <a href="/api/auth/logout" className="pixel-btn bg-pixel-secondary border-pixel-secondary hover:bg-pixel-bg hover:text-pixel-secondary" rel="nofollow">
               Logout
             </a>
           </div>
