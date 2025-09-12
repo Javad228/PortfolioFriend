@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
-import { useUser } from '@auth0/nextjs-auth0/client'
+import { useUser } from '@auth0/nextjs-auth0'
 import { motion } from 'framer-motion'
 import { Plus, Save, Trash2, LogOut, Eye } from 'lucide-react'
 
