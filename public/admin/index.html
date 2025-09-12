@@ -4,63 +4,180 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio Admin</title>
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <style>
     body {
       background: #0f0f23;
       color: #00ff41;
       font-family: 'Courier New', monospace;
+      margin: 0;
+      padding: 20px;
     }
     
-    .loading {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      font-size: 24px;
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
     }
     
-    .pixel-border {
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    
+    .error-box {
+      background: rgba(255, 107, 53, 0.1);
+      border: 2px solid #ff6b35;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 4px;
+    }
+    
+    .info-box {
+      background: rgba(0, 255, 65, 0.1);
       border: 2px solid #00ff41;
-      background: #0f0f23;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 4px;
+    }
+    
+    .step {
+      margin: 20px 0;
+      padding: 15px;
+      border-left: 4px solid #00ff41;
+      background: rgba(0, 255, 65, 0.05);
+    }
+    
+    code {
+      background: rgba(0, 255, 65, 0.1);
+      padding: 2px 6px;
+      border-radius: 2px;
+      font-family: 'Courier New', monospace;
+    }
+    
+    .btn {
+      background: #00ff41;
+      color: #0f0f23;
+      border: none;
+      padding: 10px 20px;
+      font-family: 'Courier New', monospace;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      margin: 5px;
+    }
+    
+    .btn:hover {
+      background: #ff6b35;
     }
   </style>
 </head>
 <body>
-  <div class="loading">
-    🎮 Loading Pixel Art Portfolio Admin...
+  <div class="container">
+    <div class="header">
+      <h1>🎮 Portfolio Admin Setup</h1>
+      <p>Your admin panel is almost ready!</p>
+    </div>
+
+    <div class="error-box">
+      <h3>⚠️ Setup Required</h3>
+      <p>The admin panel needs to be configured in your Netlify dashboard first.</p>
+    </div>
+
+    <div class="info-box">
+      <h3>📋 Quick Setup Steps:</h3>
+      
+      <div class="step">
+        <h4>1. Enable Netlify Identity</h4>
+        <p>In your Netlify dashboard:</p>
+        <ul>
+          <li>Go to <strong>Site settings</strong> → <strong>Identity</strong></li>
+          <li>Click <strong>"Enable Identity"</strong></li>
+          <li>Set registration to <strong>"Invite only"</strong></li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <h4>2. Enable Git Gateway</h4>
+        <p>Still in Identity settings:</p>
+        <ul>
+          <li>Go to <strong>Services</strong> → <strong>Git Gateway</strong></li>
+          <li>Click <strong>"Enable Git Gateway"</strong></li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <h4>3. Invite Yourself</h4>
+        <p>In Identity settings:</p>
+        <ul>
+          <li>Click <strong>"Invite users"</strong></li>
+          <li>Enter your email address</li>
+          <li>Send the invitation</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <h4>4. Access the Admin Panel</h4>
+        <p>After completing the setup:</p>
+        <ul>
+          <li>Check your email for the invitation</li>
+          <li>Set up your password</li>
+          <li>Return to this page - it will work!</li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px;">
+      <a href="/" class="btn">← Back to Portfolio</a>
+      <button onclick="window.location.reload()" class="btn">🔄 Retry Admin</button>
+    </div>
+
+    <div class="info-box" style="margin-top: 40px;">
+      <h3>🔧 Alternative: Manual Editing</h3>
+      <p>You can also edit your portfolio by:</p>
+      <ul>
+        <li>Editing <code>public/portfolio-config.json</code> directly</li>
+        <li>Adding images to <code>public/portfolio/your_project_name/</code></li>
+        <li>Following the guides in <code>SIMPLE_GUIDE.md</code></li>
+      </ul>
+    </div>
   </div>
-  
-  <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
-  
+
+  <!-- Only load Netlify CMS if Identity is properly configured -->
   <script>
-    // Initialize Netlify Identity
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", user => {
-        if (!user) {
-          window.netlifyIdentity.on("login", () => {
-            document.location.href = "/admin/";
-          });
-        }
-      });
+    // Check if we're on Netlify and Identity is configured
+    if (window.location.hostname.includes('netlify.app') || window.location.hostname.includes('netlify.com')) {
+      // Try to load Netlify Identity
+      const script1 = document.createElement('script');
+      script1.src = 'https://identity.netlify.com/v1/netlify-identity-widget.js';
+      script1.onload = function() {
+        // Load Netlify CMS
+        const script2 = document.createElement('script');
+        script2.src = 'https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js';
+        script2.onload = function() {
+          // Hide the setup instructions
+          document.querySelector('.container').style.display = 'none';
+          
+          // Initialize Netlify Identity
+          if (window.netlifyIdentity) {
+            window.netlifyIdentity.on("init", user => {
+              if (!user) {
+                window.netlifyIdentity.on("login", () => {
+                  document.location.href = "/admin/";
+                });
+              }
+            });
+          }
+        };
+        document.head.appendChild(script2);
+      };
+      document.head.appendChild(script1);
+    } else {
+      // Show local development message
+      const localMsg = document.createElement('div');
+      localMsg.className = 'info-box';
+      localMsg.innerHTML = '<h3>💻 Local Development</h3><p>The admin panel only works on the deployed Netlify site. For local editing, use the manual method described above.</p>';
+      document.querySelector('.container').appendChild(localMsg);
     }
-    
-    // Custom styling for the CMS
-    CMS.registerPreviewStyle("/admin/preview.css");
-    
-    // Custom preview template for projects
-    CMS.registerPreviewTemplate("portfolio", ({ entry, widgetFor }) => {
-      const data = entry.getIn(['data']).toJS();
-      return `
-        <div style="background: #0f0f23; color: #00ff41; padding: 20px; font-family: monospace;">
-          <h1>🎮 ${data.title || 'Project Preview'}</h1>
-          <p><strong>Category:</strong> ${data.category || 'N/A'}</p>
-          <p><strong>Description:</strong> ${data.description || 'No description'}</p>
-          ${data.image ? `<img src="${data.image}" style="max-width: 200px; image-rendering: pixelated;" />` : ''}
-          <p><strong>Tags:</strong> ${(data.tags || []).join(', ')}</p>
-        </div>
-      `;
-    });
   </script>
 </body>
 </html>
