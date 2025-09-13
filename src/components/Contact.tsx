@@ -2,7 +2,7 @@
 
 import React, { useState, useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
-import { Mail, MessageSquare, Send, Copy, Check } from 'lucide-react'
+import { Mail, MessageSquare, Send, Copy, Check, Instagram } from 'lucide-react'
 
 export default function Contact() {
   const ref = useRef(null)
@@ -182,6 +182,38 @@ export default function Contact() {
                 </p>
               </motion.div>
 
+              {/* Instagram Contact */}
+              <motion.div
+                className="bg-pixel-bg/50 border-2 border-pixel-border p-6 hover:border-pixel-accent transition-all duration-300"
+                initial={{ opacity: 0, y: 30 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.5, delay: 1.0 }}
+                whileHover={{ scale: 1.02 }}
+              >
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center">
+                    <Instagram className="text-pixel-accent mr-4" size={24} />
+                    <div>
+                      <h4 className="text-lg font-bold text-pixel-text mb-1">INSTAGRAM</h4>
+                      <p className="text-pixel-text/80 text-sm">@jagana.db</p>
+                    </div>
+                  </div>
+                  <motion.a
+                    href="https://www.instagram.com/jagana.db/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="pixel-btn bg-pixel-accent border-pixel-accent hover:bg-pixel-bg hover:text-pixel-accent px-3 py-2 text-xs"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    VISIT
+                  </motion.a>
+                </div>
+                <p className="text-pixel-text/60 text-sm mt-3">
+                  Check out my latest work, behind-the-scenes content, and art process.
+                </p>
+              </motion.div>
+
               {/* Availability Info */}
               <motion.div
                 className="bg-gradient-to-r from-pixel-accent/20 to-pixel-primary/20 border-2 border-pixel-accent p-6"
@@ -310,6 +342,18 @@ export default function Contact() {
               <MessageSquare size={20} />
               DISCORD CHAT
             </motion.button>
+
+            <motion.a
+              href="https://www.instagram.com/jagana.db/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="pixel-btn bg-pixel-accent border-pixel-accent hover:bg-pixel-bg hover:text-pixel-accent text-lg px-8 py-4 inline-flex items-center gap-3"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Instagram size={20} />
+              FOLLOW ME
+            </motion.a>
           </div>
         </motion.div>
       </div>

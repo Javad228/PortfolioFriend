@@ -8,10 +8,9 @@ export default function Footer() {
   const currentYear = new Date().getFullYear()
 
   const socialLinks = [
-    { name: 'TWITTER', url: '#', icon: '🐦' },
-    { name: 'INSTAGRAM', url: '#', icon: '📷' },
-    { name: 'ARTSTATION', url: '#', icon: '🎨' },
-    { name: 'GITHUB', url: '#', icon: '💻' }
+    { name: 'INSTAGRAM', url: 'https://www.instagram.com/jagana.db/', icon: '📷' },
+    { name: 'DISCORD', url: '#', icon: '💬' },
+    { name: 'EMAIL', url: 'mailto:javid.hajiyev.w@gmail.com', icon: '📧' }
   ]
 
   const footerArt = [
@@ -162,8 +161,9 @@ export default function Footer() {
             {/* Contact Info */}
             <div className="mt-6 p-4 border-2 border-pixel-border bg-pixel-bg/50">
               <h4 className="text-sm font-bold text-pixel-text mb-2">QUICK CONTACT</h4>
-              <p className="text-xs text-pixel-text/60 mb-2">pixelartist@example.com</p>
-              <p className="text-xs text-pixel-text/60">PixelMaster#1337</p>
+              <p className="text-xs text-pixel-text/60 mb-2">javid.hajiyev.w@gmail.com</p>
+              <p className="text-xs text-pixel-text/60 mb-2">djammik</p>
+              <p className="text-xs text-pixel-text/60">@jagana.db</p>
             </div>
           </motion.div>
         </div>

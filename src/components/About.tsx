@@ -2,7 +2,7 @@
 
 import React, { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
-import { Code, Palette, Gamepad2, Zap } from 'lucide-react'
+import { Code, Palette, Gamepad2, Zap, Instagram } from 'lucide-react'
 
 export default function About() {
   const ref = useRef(null)
@@ -67,7 +67,7 @@ export default function About() {
             </h3>
             <div className="space-y-4 text-pixel-text/80 text-lg leading-relaxed">
               <p>
-                I'm a pixel artist turning a long-time hobby into my main thing. I've worked on plenty of projects and side gigs, so I'm easy to collaborate with clear communication, reliable delivery, and a friendly vibe. Always open to new experiences, challenges, and collabs – let's make something great.
+                I&apos;m a pixel artist turning a long-time hobby into my main thing. I&apos;ve worked on plenty of projects and side gigs, so I&apos;m easy to collaborate with clear communication, reliable delivery, and a friendly vibe. Always open to new experiences, challenges, and collabs – let&apos;s make something great.
               </p>
             </div>
 
@@ -131,9 +131,20 @@ export default function About() {
                   <span className="glitch" data-text="PIXEL ARTIST">PIXEL ARTIST</span>
                 </h4>
                 <div className="w-16 h-0.5 bg-pixel-secondary mx-auto mb-4"></div>
-                <p className="text-pixel-text/80 text-sm">
+                <p className="text-pixel-text/80 text-sm mb-3">
                   &ldquo;Every pixel tells a story&rdquo;
                 </p>
+                <motion.a
+                  href="https://www.instagram.com/jagana.db/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-pixel-accent hover:text-pixel-primary transition-colors duration-300 text-sm"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Instagram size={16} />
+                  @jagana.db
+                </motion.a>
               </motion.div>
             </div>
           </motion.div>
