@@ -87,15 +87,16 @@ export default function Contact() {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+        <div className="flex justify-center">
           {/* Contact Info */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            className="max-w-2xl w-full"
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             {/* Pixel Art Envelope */}
-            <div className="mb-8 flex justify-center lg:justify-start">
+            <div className="mb-8 flex justify-center">
               <div className="font-mono text-pixel-primary text-xs leading-none">
                 {envelopeArt.map((line, index) => (
                   <motion.div
@@ -147,9 +148,6 @@ export default function Contact() {
                     {copiedEmail ? <Check size={16} /> : <Copy size={16} />}
                   </motion.button>
                 </div>
-                <p className="text-pixel-text/60 text-sm mt-3">
-                  Perfect for project inquiries and professional collaborations.
-                </p>
               </motion.div>
 
               {/* Discord Contact */}
@@ -177,9 +175,6 @@ export default function Contact() {
                     {copiedDiscord ? <Check size={16} /> : <Copy size={16} />}
                   </motion.button>
                 </div>
-                <p className="text-pixel-text/60 text-sm mt-3">
-                  Quick chats, brainstorming sessions, and real-time collaboration.
-                </p>
               </motion.div>
 
               {/* Instagram Contact */}
@@ -209,9 +204,6 @@ export default function Contact() {
                     VISIT
                   </motion.a>
                 </div>
-                <p className="text-pixel-text/60 text-sm mt-3">
-                  Check out my latest work, behind-the-scenes content, and art process.
-                </p>
               </motion.div>
 
               {/* Availability Info */}
@@ -230,81 +222,6 @@ export default function Contact() {
             </div>
           </motion.div>
 
-          {/* Contact Form */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            <div className="bg-pixel-bg/50 border-2 border-pixel-border p-8">
-              <h3 className="text-2xl font-bold mb-6 text-pixel-text">
-                SEND A MESSAGE
-              </h3>
-              
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label className="block text-sm font-bold text-pixel-text mb-2">
-                    YOUR NAME
-                  </label>
-                  <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    className="w-full bg-pixel-bg border-2 border-pixel-border focus:border-pixel-primary text-pixel-text px-4 py-3 outline-none transition-colors duration-300 font-mono text-sm"
-                    placeholder="Enter your name..."
-                    required
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-bold text-pixel-text mb-2">
-                    EMAIL ADDRESS
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    className="w-full bg-pixel-bg border-2 border-pixel-border focus:border-pixel-primary text-pixel-text px-4 py-3 outline-none transition-colors duration-300 font-mono text-sm"
-                    placeholder="your@email.com"
-                    required
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-bold text-pixel-text mb-2">
-                    PROJECT DETAILS
-                  </label>
-                  <textarea
-                    name="message"
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    rows={6}
-                    className="w-full bg-pixel-bg border-2 border-pixel-border focus:border-pixel-primary text-pixel-text px-4 py-3 outline-none transition-colors duration-300 font-mono text-sm resize-none"
-                    placeholder="Tell me about your project, timeline, and budget..."
-                    required
-                  />
-                </div>
-
-                <motion.button
-                  type="submit"
-                  className="pixel-btn w-full py-4 text-lg flex items-center justify-center gap-3"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  <Send size={20} />
-                  SEND MESSAGE
-                </motion.button>
-              </form>
-
-              <div className="mt-6 text-center">
-                <p className="text-pixel-text/60 text-sm">
-                  I&apos;ll get back to you as soon as possible!
-                </p>
-              </div>
-            </div>
-          </motion.div>
         </div>
 
         {/* Call to Action */}
@@ -338,9 +255,10 @@ export default function Contact() {
               className="pixel-btn bg-pixel-secondary border-pixel-secondary hover:bg-pixel-bg hover:text-pixel-secondary text-lg px-8 py-4 inline-flex items-center gap-3"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              title="Click to copy Discord username"
             >
               <MessageSquare size={20} />
-              DISCORD CHAT
+              {copiedDiscord ? 'COPIED!' : 'COPY DISCORD'}
             </motion.button>
 
             <motion.a

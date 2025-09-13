@@ -123,9 +123,9 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
           >
-            <span className="block mb-2">WELCOME TO</span>
-            <span className="text-pixel-primary glitch" data-text="PIXEL REALM">
-              PIXEL REALM
+            <span className="block mb-2">HEY, I&apos;M</span>
+            <span className="text-pixel-primary glitch" data-text="Javid">
+              Javid
             </span>
           </motion.h1>
 
@@ -149,9 +149,9 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.5 }}
           >
-            Crafting digital worlds one pixel at a time. 
+            I make pixel art and game sprites. 
             <br />
-            Explore my collection of retro-inspired art, game sprites, and digital masterpieces.
+            Check out my work below.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -167,7 +167,7 @@ export default function Hero() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              VIEW PORTFOLIO
+              SEE MY WORK
             </motion.button>
             
             <motion.button
@@ -176,7 +176,7 @@ export default function Hero() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              GET IN TOUCH
+              CONTACT ME
             </motion.button>
           </motion.div>
 

@@ -127,13 +127,6 @@ export default function About() {
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: 1 }}
               >
-                <h4 className="text-xl font-bold text-pixel-primary mb-2">
-                  <span className="glitch" data-text="PIXEL ARTIST">PIXEL ARTIST</span>
-                </h4>
-                <div className="w-16 h-0.5 bg-pixel-secondary mx-auto mb-4"></div>
-                <p className="text-pixel-text/80 text-sm mb-3">
-                  &ldquo;Every pixel tells a story&rdquo;
-                </p>
                 <motion.a
                   href="https://www.instagram.com/jagana.db/"
                   target="_blank"
