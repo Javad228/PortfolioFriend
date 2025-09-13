@@ -1,7 +1,12 @@
 import { withPageAuthRequired } from '@auth0/nextjs-auth0';
+import { useUser } from '@auth0/nextjs-auth0/client';
 import Link from 'next/link';
 
-export default function Dashboard({ user }) {
+export default function Dashboard() {
+  const { user, error, isLoading } = useUser();
+
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>{error.message}</div>;
 
   return (
     <div className="min-h-screen bg-pixel-bg text-pixel-text p-8">
@@ -10,7 +15,7 @@ export default function Dashboard({ user }) {
           🎮 PORTFOLIO DASHBOARD
         </h1>
         <p className="text-pixel-text/80 mb-8">
-          Welcome back, {user.name}!
+          Welcome back, {user?.name || user?.email}!
         </p>
         
         <div className="bg-pixel-bg/50 border-2 border-pixel-border p-6">

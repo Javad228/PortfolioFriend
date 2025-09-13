@@ -12,35 +12,26 @@ export default function About() {
     {
       icon: <Palette className="w-8 h-8" />,
       title: 'PIXEL ART',
-      description: 'Creating stunning pixel art with attention to every detail, from character sprites to environmental tiles.',
-      level: 95
+      description: 'Creating stunning pixel art with attention to every detail, from character sprites to environmental tiles.'
     },
     {
       icon: <Gamepad2 className="w-8 h-8" />,
       title: 'GAME SPRITES',
-      description: 'Designing animated characters, UI elements, and game assets optimized for various platforms.',
-      level: 90
+      description: 'Designing animated characters, UI elements, and game assets optimized for various platforms.'
     },
     {
       icon: <Code className="w-8 h-8" />,
       title: 'DIGITAL ART',
-      description: 'Blending traditional art techniques with modern digital tools for unique visual experiences.',
-      level: 85
+      description: 'Blending traditional art techniques with modern digital tools for unique visual experiences.'
     },
     {
       icon: <Zap className="w-8 h-8" />,
       title: 'ANIMATION',
-      description: 'Bringing static pixels to life with smooth, frame-by-frame animations and effects.',
-      level: 88
+      description: 'Bringing static pixels to life with smooth, frame-by-frame animations and effects.'
     }
   ]
 
-  const stats = [
-    { label: 'PROJECTS COMPLETED', value: '50+' },
-    { label: 'YEARS EXPERIENCE', value: '5+' },
-    { label: 'HAPPY CLIENTS', value: '30+' },
-    { label: 'PIXELS PLACED', value: '1M+' }
-  ]
+  // Stats removed - focusing on actual project portfolio instead
 
   return (
     <section id="about" className="py-20 bg-gradient-to-b from-pixel-bg to-pixel-bg/50 relative">
@@ -72,43 +63,14 @@ export default function About() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <h3 className="text-2xl md:text-3xl font-bold mb-6 text-pixel-text">
-              CRAFTING DIGITAL WORLDS
+              HEY THERE!
             </h3>
             <div className="space-y-4 text-pixel-text/80 text-lg leading-relaxed">
               <p>
-                Welcome to my pixel universe! I&apos;m a passionate digital artist specializing in 
-                pixel art and retro-style game graphics. With over 5 years of experience, 
-                I&apos;ve mastered the art of creating compelling visuals within the constraints 
-                of limited resolution and color palettes.
-              </p>
-              <p>
-                My journey began with classic 8-bit and 16-bit games, which inspired me to 
-                pursue this unique art form. I believe that limitations breed creativity, 
-                and every pixel has its purpose in telling a story.
-              </p>
-              <p>
-                From character sprites to environmental tiles, UI elements to animated 
-                sequences, I bring ideas to life one pixel at a time. Each project is 
-                a new adventure in digital craftsmanship.
+                I'm a pixel artist turning a long-time hobby into my main thing. I've worked on plenty of projects and side gigs, so I'm easy to collaborate with clear communication, reliable delivery, and a friendly vibe. Always open to new experiences, challenges, and collabs – let's make something great.
               </p>
             </div>
 
-            {/* Stats */}
-            <div className="grid grid-cols-2 gap-4 mt-8">
-              {stats.map((stat, index) => (
-                <motion.div
-                  key={stat.label}
-                  className="text-center p-4 border-2 border-pixel-border bg-pixel-bg/50"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                  transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
-                  whileHover={{ scale: 1.05, borderColor: 'var(--pixel-primary)' }}
-                >
-                  <div className="text-2xl font-bold text-pixel-primary mb-1">{stat.value}</div>
-                  <div className="text-xs text-pixel-text/60">{stat.label}</div>
-                </motion.div>
-              ))}
-            </div>
           </motion.div>
 
           {/* Profile Picture */}
@@ -202,25 +164,9 @@ export default function About() {
                   <h4 className="text-xl font-bold text-pixel-text">{skill.title}</h4>
                 </div>
                 
-                <p className="text-pixel-text/80 mb-4 text-sm leading-relaxed">
+                <p className="text-pixel-text/80 text-sm leading-relaxed">
                   {skill.description}
                 </p>
-                
-                {/* Skill Level Bar */}
-                <div className="relative">
-                  <div className="flex justify-between items-center mb-2">
-                    <span className="text-xs text-pixel-text/60">SKILL LEVEL</span>
-                    <span className="text-xs text-pixel-primary font-bold">{skill.level}%</span>
-                  </div>
-                  <div className="w-full h-2 bg-pixel-border border border-pixel-border">
-                    <motion.div
-                      className="h-full bg-gradient-to-r from-pixel-primary to-pixel-secondary"
-                      initial={{ width: 0 }}
-                      animate={isInView ? { width: `${skill.level}%` } : {}}
-                      transition={{ duration: 1, delay: 1 + index * 0.2 }}
-                    />
-                  </div>
-                </div>
               </motion.div>
             ))}
           </div>

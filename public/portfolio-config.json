@@ -71,6 +71,64 @@
           "tags": ["UI", "FITNESS", "INTERFACE"]
         }
       ]
+    },
+    {
+      "id": 3,
+      "projectName": "RPG Project",
+      "projectDescription": "Fantasy Game Animations & Characters",
+      "projectColor": "primary",
+      "items": [
+        {
+          "title": "RPG CHARACTER ANIMATION 1",
+          "category": "ANIMATION",
+          "description": "Fantasy character animation for RPG game development.",
+          "imagePath": "rpg_project/test2.gif",
+          "tags": ["RPG", "ANIMATION", "FANTASY"]
+        },
+        {
+          "title": "RPG CHARACTER ANIMATION 2",
+          "category": "ANIMATION",
+          "description": "Dynamic character movement animation for fantasy RPG.",
+          "imagePath": "rpg_project/test3.gif",
+          "tags": ["RPG", "CHARACTER", "MOVEMENT"]
+        },
+        {
+          "title": "RPG CHARACTER ANIMATION 3",
+          "category": "ANIMATION",
+          "description": "Detailed fantasy character animation with smooth transitions.",
+          "imagePath": "rpg_project/test4.gif",
+          "tags": ["RPG", "FANTASY", "ANIMATION"]
+        },
+        {
+          "title": "RPG CHARACTER ANIMATION 4",
+          "category": "ANIMATION",
+          "description": "Advanced character animation for RPG game mechanics.",
+          "imagePath": "rpg_project/test5.gif",
+          "tags": ["RPG", "GAME", "CHARACTER"]
+        },
+        {
+          "title": "RPG CHARACTER ANIMATION 5",
+          "category": "ANIMATION",
+          "description": "Complex fantasy character animation with detailed frame work.",
+          "imagePath": "rpg_project/test6.gif",
+          "tags": ["RPG", "COMPLEX", "ANIMATION"]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "projectName": "High Resolution Project",
+      "projectDescription": "Detailed Digital Art & Character Design",
+      "projectColor": "accent",
+      "items": [
+        {
+          "title": "BABY DJAM CHARACTER",
+          "category": "CHARACTER",
+          "description": "High-resolution character design with detailed artwork and styling.",
+          "imagePath": "high_res_project/babydjam.png",
+          "tags": ["HIGH-RES", "CHARACTER", "DETAILED"]
+        }
+      ]
     }
   ]
 }

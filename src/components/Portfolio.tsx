@@ -2,7 +2,7 @@
 
 import React, { useState, useRef, useEffect } from 'react'
 import { motion, AnimatePresence, useInView } from 'framer-motion'
-import { X, ExternalLink, Eye, Heart } from 'lucide-react'
+import { X, ExternalLink } from 'lucide-react'
 
 interface PortfolioItem {
   id: number
@@ -12,8 +12,6 @@ interface PortfolioItem {
   image: string
   pixelArt: string[]
   tags: string[]
-  likes: number
-  views: number
 }
 
 interface ConfigItem {
@@ -75,9 +73,7 @@ export default function Portfolio() {
                 '██░░░░░░░░░░░░██',
                 '████████████████'
               ],
-              tags: item.tags,
-              likes: Math.floor(Math.random() * 200) + 50,
-              views: Math.floor(Math.random() * 2000) + 500
+              tags: item.tags
             })
           })
         })
@@ -94,9 +90,7 @@ export default function Portfolio() {
             description: 'Complete 8-directional walking animation set for character movement in games.',
             image: '/portfolio/emo_project/test_walk_south.gif',
             pixelArt: ['████████████████', '██░░░░░░░░░░░░██', '████████████████'],
-            tags: ['ANIMATION', 'CHARACTER', 'WALK CYCLE'],
-            likes: 245,
-            views: 1850
+            tags: ['ANIMATION', 'CHARACTER', 'WALK CYCLE']
           },
           {
             id: 2,
@@ -105,9 +99,7 @@ export default function Portfolio() {
             description: 'Detailed character sprite design for fitness/workout themed game.',
             image: '/portfolio/workout_project/image.png',
             pixelArt: ['████████████████', '██░░░░░░░░░░░░██', '████████████████'],
-            tags: ['CHARACTER', 'FITNESS', 'SPRITE'],
-            likes: 198,
-            views: 1540
+            tags: ['CHARACTER', 'FITNESS', 'SPRITE']
           }
         ])
         
@@ -261,18 +253,8 @@ export default function Portfolio() {
                         ))}
                       </div>
 
-                      {/* Stats */}
-                      <div className="flex justify-between items-center text-xs text-pixel-text/60">
-                        <div className="flex items-center gap-3">
-                          <span className="flex items-center gap-1">
-                            <Heart size={10} />
-                            {item.likes}
-                          </span>
-                          <span className="flex items-center gap-1">
-                            <Eye size={10} />
-                            {item.views}
-                          </span>
-                        </div>
+                      {/* Action */}
+                      <div className="flex justify-end items-center text-xs text-pixel-text/60">
                         <span className="text-pixel-primary">CLICK</span>
                       </div>
                     </div>
@@ -338,18 +320,8 @@ export default function Portfolio() {
                     ))}
                   </div>
 
-                  {/* Stats */}
-                  <div className="flex justify-between items-center text-xs text-pixel-text/60">
-                    <div className="flex items-center gap-4">
-                      <span className="flex items-center gap-1">
-                        <Heart size={12} />
-                        {item.likes}
-                      </span>
-                      <span className="flex items-center gap-1">
-                        <Eye size={12} />
-                        {item.views}
-                      </span>
-                    </div>
+                  {/* Action */}
+                  <div className="flex justify-end items-center text-xs text-pixel-text/60">
                     <span className="text-pixel-primary">CLICK TO VIEW</span>
                   </div>
                 </div>
@@ -413,19 +385,8 @@ export default function Portfolio() {
                     ))}
                   </div>
 
-                  {/* Stats and Actions */}
-                  <div className="flex justify-between items-center">
-                    <div className="flex items-center gap-6 text-pixel-text/60">
-                      <span className="flex items-center gap-2">
-                        <Heart size={16} />
-                        {selectedItem.likes} likes
-                      </span>
-                      <span className="flex items-center gap-2">
-                        <Eye size={16} />
-                        {selectedItem.views} views
-                      </span>
-                    </div>
-                    
+                  {/* Actions */}
+                  <div className="flex justify-end items-center">
                     <button className="pixel-btn flex items-center gap-2">
                       <ExternalLink size={16} />
                       VIEW FULL SIZE
